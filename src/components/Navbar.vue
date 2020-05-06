@@ -28,16 +28,16 @@ export default {
   text-align: center;
   padding: 0.5rem;
   transition: all 500ms ease-in-out;
-  margin-left: 10px
+  margin-left: 10px;
 }
 
-.nav a:hover{
-  transform: scale(1.1)
+.nav a:hover {
+  transform: scale(1.1);
 }
 
 .nav a.router-link-exact-active {
   background: #000;
   color: #fff;
-  transform: scale(1.1)
+  transform: scale(1.1);
 }
 </style>

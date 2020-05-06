@@ -1,25 +1,25 @@
-<template>      
-<div>
+<template>
+  <div>
     <div class="title">
-        <h2>{{blog.title}}</h2>
+      <h2>{{ blog.title }}</h2>
     </div>
     <div class="body">
-        <div class="image">
-            <!-- <img v-bind:src="image.urls.regular" alt=""> -->
-        </div>
-        <p>{{blog.desc}}</p>
+      <div class="image">
+        <!-- <img v-bind:src="image.urls.regular" alt=""> -->
+      </div>
+      <p>{{ blog.desc }}</p>
     </div>
-</div>
+  </div>
 </template>
 <script>
 export default {
-    name: 'BlogTile',
-    props: {
-        blog: {
-            Type: Object
-        }
+  name: "BlogTile",
+  props: {
+    blog: {
+      Type: Object
     }
-}
+  }
+};
 </script>
 <style scoped>
 .title {
@@ -27,8 +27,8 @@ export default {
   margin-bottom: 16px;
 }
 .image img {
-  width:250px;
-  height:250px;
-  object-fit:scale-down;
+  width: 250px;
+  height: 250px;
+  object-fit: scale-down;
 }
 </style>
