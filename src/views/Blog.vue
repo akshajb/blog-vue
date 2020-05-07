@@ -1,16 +1,18 @@
 <template>
   <div class="blog">
-    <div class="blog-container">
-      <div class="title">
-        <h1>{{ blog.title }}</h1>
-      </div>
-      <div class="body">
-        <!-- <img v-bind:src="blog.urls.regular" alt=""> -->
-        <p>Image</p>
-        <br />
-        <p>{{ blog.desc }}{{ blog.content }}</p>
-      </div>
-    </div>
+    <b-container class="blog-card">
+      <b-row>
+        <b-col>
+          <div class="blog-title">
+            <h1>{{ blog.title }}</h1>
+            <div class="image">
+              <!-- <img v-bind:src="blog.urls.regular" alt=""> -->
+            </div>
+          </div>
+          <div class="blog-content" v-html="blog.content"></div>
+        </b-col>
+      </b-row>
+    </b-container>
   </div>
 </template>
 
@@ -34,35 +36,25 @@ export default {
 };
 </script>
 <style scoped>
-.blog {
-  max-width: 960px;
-  margin: auto;
-}
-.blog-container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.blog-container > div {
-  margin-bottom: 16px;
-}
-.title {
-  text-transform: capitalize;
-}
-.body {
-  display: flex;
-  justify-content: center;
+.blog-card {
   background-color: #fff;
-  padding: 24px;
+  box-shadow: 10px 10px 30px #d8d9e0b0;
 }
-.body img {
-  width: 40%;
-}
-.body p {
-  width: 60%;
+.blog-title {
   text-align: left;
-  margin-left: 16px;
-  font-size: 1.3rem;
+}
+
+.blog-content,
+.blog-title {
+  padding: 1rem;
+}
+
+.blog-content >>> h3,
+.blog-content >>> h2 {
+  font-family: "Merriweather", serif;
+}
+
+.blog-content >>> p {
+  line-height: 32px;
 }
 </style>

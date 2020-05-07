@@ -6,7 +6,8 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     images: [],
-    blogs: []
+    blogs: [],
+    user: null
   },
   mutations: {
     storeimages: (state, payload) => {
