@@ -15,6 +15,9 @@ export default new Vuex.Store({
     },
     storeblogs: (state, payload) => {
       state.blogs = payload;
+    },
+    createuser: (state, payload) => {
+      state.user = payload;
     }
   },
   actions: {
@@ -23,6 +26,9 @@ export default new Vuex.Store({
     },
     storeblogs: (context, payload) => {
       context.commit("storeblogs", payload);
+    },
+    createuser: (context, payload) => {
+      context.commit("createuser", payload);
     }
   },
   modules: {}

@@ -1,9 +1,7 @@
 <template>
   <div class="add">
-    <h1>Add a blog</h1>
     <div class="form">
-      <form>
-        <div class="blog-title">
+      <!-- <div class="blog-title">
           <input
             type="text"
             name="title"
@@ -51,23 +49,28 @@
                         bullist numlist outdent indent | help'
             }"
           >
-          </editor>
-        </div>
-        <div class="submit" v-on:click="addBlog()">
-          <input type="button" value="Add" />
-        </div>
-      </form>
+          </editor> -->
+      <Form
+        v-on:Login="login($event)"
+        v-bind:inputs="[
+          { type: 'text', name: 'title' },
+          { type: 'text', name: 'desc' },
+          { type: 'file', name: 'upload' }
+        ]"
+        v-bind:Name="{ text: 'Add a blog', value: 'add' }"
+        Reditor="true"
+      ></Form>
     </div>
   </div>
 </template>
 <script>
 import axios from "axios";
-import Editor from "@tinymce/tinymce-vue";
+import Form from "@/components/Form";
 
 export default {
   name: "Add",
   components: {
-    editor: Editor
+    Form: Form
   },
   data() {
     return {
@@ -105,26 +108,17 @@ export default {
   height: 85%;
   padding: 2rem;
 }
-input,
-textarea {
-  border: none;
-  font-family: "IBM Plex Sans", sans-serif;
-  font-size: 1rem;
-  padding: 0.5rem;
-  background: #feffff;
-  box-shadow: 15px 35px 50px #d8d9e0b0;
-}
-.blog-title,
-.blog-desc {
+.title,
+.desc {
   position: relative;
   max-width: 30%;
 }
-.blog-title input,
-.blog-desc input {
+.title input,
+.desc input {
   width: 100%;
 }
-.blog-title span,
-.blog-desc span {
+.title span,
+.desc span {
   background-color: rgb(40, 162, 238);
 }
 input ~ .focus-border,
@@ -168,18 +162,5 @@ input:focus ~ .focus-border4 {
 
 .form form > div {
   margin-top: 24px;
-}
-
-.submit input {
-  background-color: #000;
-  color: #fff;
-  cursor: pointer;
-  padding: 0.5rem;
-  width: 100px;
-  text-transform: uppercase;
-}
-
-.submit input:hover {
-  background-color: rgb(9, 135, 213);
 }
 </style>
